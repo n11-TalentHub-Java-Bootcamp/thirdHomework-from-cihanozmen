@@ -2,11 +2,14 @@ package com.cihanozmen.springboot.dto;
 
 import com.fasterxml.jackson.annotation.JsonFilter;
 
+import javax.validation.constraints.Size;
 import java.math.BigDecimal;
 import java.util.Date;
 @JsonFilter("UrunDtoFilter")
 public class UrunDto {
     private Long id;
+
+    @Size(min=2)
     private String adi;
     private BigDecimal fiyat;
     private Date kayitTarihi;
